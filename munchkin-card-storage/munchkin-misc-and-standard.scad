@@ -12,6 +12,12 @@ module cutout() {
         }
         translate([0,0,15]) cube([58,100,30], center=true);
         
+        difference() {
+            translate([0,0,20]) cube([78,100,20], center=true);
+            rotate([90,0,0]) translate([78/2,11.5,0]) cylinder(h=100,r=10, center=true);
+            rotate([90,0,0]) translate([-78/2,11.5,0]) cylinder(h=100,r=10, center=true);
+        }
+        
         // Buttom slot
         hull() {
             translate([15,0,0]) cylinder(h=100, d=40, center=true);
@@ -34,6 +40,12 @@ intersection() {
         translate([-130, 0, 0]) rotate([0,90,0]) cylinder(h=20, d=30, center=true);
         translate([130,0,15]) cube([20,30,30], center=true);
         translate([-130,0,15]) cube([20,30,30], center=true);
+     
+        difference() {
+            translate([0,0,20]) cube([300,50,20], center=true);
+            translate([0,-25,11.5]) rotate([0,90,0])  cylinder(h=300,r=10, center=true);
+            translate([0,25,11.5]) rotate([0,90,0]) cylinder(h=300,r=10, center=true);
+        }
         
     }
 

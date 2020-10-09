@@ -17,11 +17,23 @@ intersection(){
         rotate([0,90,0]) cylinder(h=280,d=30,center=true);
         translate([0,0,15]) cube([280,30,30], center=true);
         
+        difference() {
+            translate([0,0,20]) cube([150,50,20], center=true);
+            translate([0,-25,11.5]) rotate([0,90,0])  cylinder(h=150,r=10, center=true);
+            translate([0,25,11.5]) rotate([0,90,0]) cylinder(h=150,r=10, center=true);
+        }
+        
         // Finger slots short side
         translate([0,0,15]) cube([63,100,30], center=true);
         hull() {
             rotate([90,0,0]) translate([16.5,0,0])   cylinder(h=100,d=30,center=true);
             rotate([90,0,0]) translate([-16.5,0,0]) cylinder(h=100,d=30,center=true);
+        }
+        
+        difference() {
+            translate([0,0,20]) cube([83,100,20], center=true);
+            rotate([90,0,0]) translate([83/2,11.5,0]) cylinder(h=100,r=10, center=true);
+            rotate([90,0,0]) translate([-83/2,11.5,0]) cylinder(h=100,r=10, center=true);
         }
 
         // Plastic saving slots

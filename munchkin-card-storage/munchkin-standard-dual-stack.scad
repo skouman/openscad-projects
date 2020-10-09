@@ -8,6 +8,12 @@ module cutout() {
         // Finger slots
         rotate([90,0,0]) translate([0,0,0]) cylinder(h=100,d=30,center=true);
         translate([0,0,15]) cube([30,100,30], center=true);
+     
+     difference() {
+        translate([0,0,20]) cube([50,100,20], center=true);
+        rotate([90,0,0]) translate([25,11.5,0]) cylinder(h=100,r=10, center=true);
+        rotate([90,0,0]) translate([-25,11.5,0]) cylinder(h=100,r=10, center=true);
+        }
     
         // Buttom slot
         hull() {
@@ -36,6 +42,12 @@ intersection() {
         hull() {
             translate([0,-31.5,5]) rotate([0,90,0]) cylinder(h=130,d=20,center=true);
             translate([0,-31.5,-5]) rotate([0,90,0]) cylinder(h=130,d=20,center=true);
+        }
+        
+        difference() {
+            translate([0,0,20]) cube([150,50,20], center=true);
+            translate([0,-25,11.5]) rotate([0,90,0])  cylinder(h=150,r=10, center=true);
+            translate([0,25,11.5]) rotate([0,90,0]) cylinder(h=150,r=10, center=true);
         }
         
         // Card pockest and other repeated cutouts  
